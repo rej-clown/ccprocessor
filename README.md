@@ -1,11 +1,11 @@
 <h1 align="center">Color Chat Processor</h1>
 <p align="center">
-    <img src="https://travis-ci.com/nyood/ccprocessor.svg?branch=main" />
-    <a href="#license"><img src="https://img.shields.io/github/license/nyood/ccprocessor" /></a>
-    <a href="https://github.com/nyood/ccprocessor/releases"><img src="https://img.shields.io/github/v/release/nyood/ccprocessor" /></a>
+    <img src="https://travis-ci.com/rej-clown/ccprocessor.svg?branch=main" />
+    <a href="#license"><img src="https://img.shields.io/github/license/rej-clown/ccprocessor" /></a>
+    <a href="https://github.com/rej-clown/ccprocessor/releases"><img src="https://img.shields.io/github/v/release/rej-clown/ccprocessor" /></a>
     <a href="#requirements"><img src="https://img.shields.io/badge/sourcemod-v.1.10-blue" /></a>
     <a href="https://discord.gg/cFZ97Mzrjy" target="_blank"><img src="https://img.shields.io/discord/494942123548868609" /></a>
-    <img src="https://img.shields.io/github/downloads/nyood/ccprocessor/total" />
+    <img src="https://img.shields.io/github/downloads/rej-clown/ccprocessor/total" />
 </p>
 
 ## About
@@ -59,7 +59,7 @@ Handler Name | Message identifier | Package | Virtualization |
 |  `SayText`   | `ST` = Server chat | `ccp-saytext.smx`  | `Yes` |
 |  `RadioText` | `RT` = Radio chat  | `ccp-radiomsg.smx` |  `Yes` |
     
-## [Supported Modules](https://github.com/nyood/ccp-modules)
+## [Supported Modules](https://github.com/rej-clown/ccp-modules)
 
 ## License
-[GNU Public License v3](https://github.com/nyood/ccprocessor/blob/main/LICENSE)
+[GNU Public License v3](https://github.com/rej-clown/ccprocessor/blob/main/LICENSE)
