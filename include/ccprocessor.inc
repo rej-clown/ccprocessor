@@ -24,7 +24,7 @@ API key:
     ATTENTION: Do not change it yourself if you are not ready for the consequences!
 */
 
-#define API_KEY             98092248
+#define API_KEY             30122021
 
 #if !defined CORE
     #define API_OOD         "The plugin module uses an outdated API. You must update it."

@@ -25,7 +25,8 @@ GlobalForward
     g_fwdNewMessage,
     g_fwdAPIHandShake,
     g_fwdRebuildString_Post,
-    g_fwdMessageEnd;
+    g_fwdMessageEnd,
+    g_fwdRebuildString_Sp;
 
 bool 
     g_bRTP,
@@ -39,7 +40,7 @@ public Plugin myinfo =
     name        = "[CCP] Core",
     author      = "nyood",
     description = "Color chat processor",
-    version     = "3.6.0",
+    version     = "3.6.1",
     url         = "discord.gg/ChTyPUG"
 };
 
@@ -106,6 +107,11 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
     g_fwdRebuildString = new GlobalForward(
         "cc_proc_OnRebuildString",
         ET_Hook, Param_Array, Param_Cell, Param_Cell, Param_CellByRef, Param_String, Param_Cell
+    );
+
+    g_fwdRebuildString = new GlobalForward(
+        "cc_proc_OnRebuildString_Txt",
+        ET_Ignore, Param_Array, Param_Cell, Param_Cell, Param_String, Param_Cell
     );
 
     RegPluginLibrary("ccprocessor");

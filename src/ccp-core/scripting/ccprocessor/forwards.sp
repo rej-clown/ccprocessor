@@ -22,9 +22,19 @@ Processing Call_RebuildString(const int[] props, int propsCount, int part, Array
     Call_PushCell(size);
     Call_Finish(output);
 
-    if(output == Proc_Continue) {
+    if(output == Proc_Continue)
         FormatEx(szMessage, size, "%s", szBuffer);
-    }
+
+    ArrayList doNotChange = params.Clone();
+    Call_StartForward(g_fwdRebuildString_Sp);
+    Call_PushArray(props, propsCount);
+    Call_PushCell(part);
+    Call_PushCell(doNotChange);
+    Call_PushStringEx(szMessage, size, SM_PARAM_STRING_UTF8|SM_PARAM_STRING_COPY, SM_PARAM_COPYBACK);
+    Call_PushCell(size);
+    Call_Finish();
+
+    delete doNotChange;
 
     // exclude post call
     if(output == Proc_Stop)
