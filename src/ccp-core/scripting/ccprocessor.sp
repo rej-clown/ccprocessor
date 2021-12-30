@@ -109,7 +109,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
         ET_Hook, Param_Array, Param_Cell, Param_Cell, Param_CellByRef, Param_String, Param_Cell
     );
 
-    g_fwdRebuildString = new GlobalForward(
+    g_fwdRebuildString_Sp = new GlobalForward(
         "cc_proc_OnRebuildString_Txt",
         ET_Ignore, Param_Array, Param_Cell, Param_Cell, Param_String, Param_Cell
     );
