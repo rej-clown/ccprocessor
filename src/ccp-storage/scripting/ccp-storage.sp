@@ -10,7 +10,7 @@ public Plugin myinfo =
 	name = "[CCP] Storage",
 	author = "rej.chev?",
 	description = "...",
-	version = "1.0.1",
+	version = "1.0.2",
 	url = "discord.gg/ChTyPUG"
 };
 
@@ -192,12 +192,12 @@ char[] getLocation() {
 }
 
 Action CleanStoragePath(Handle hTimer, any data) {
-    static DirectoryListing dirs;
+    DirectoryListing dirs;
+    if(!(dirs = OpenDirectory(getLocation())))
+        return Plugin_Continue;
 
-    if(!dirs)
-        if(!(dirs = OpenDirectory(getLocation())))
-            return Plugin_Continue;
-    
+    static int time;
+    static JSONObject jsObject;
     static FileType type;
     static char path[PLATFORM_MAX_PATH];
 
@@ -207,8 +207,17 @@ Action CleanStoragePath(Handle hTimer, any data) {
 
         Format(path, sizeof(path), "%s/%s", getLocation(), path);
 
-        DeleteFile(path);
+        if(!(jsObject = JSONObject.FromFile(path, 0)))
+            continue;
+
+        time = (jsObject.HasKey("expired")) ? jsObject.GetInt("expired") : 0;
+        
+        if(time != -1 && GetTime() >= time)
+            DeleteFile(path);
+
+        delete jsObject;
     }
 
+    delete dirs;
     return Plugin_Continue;
 }
